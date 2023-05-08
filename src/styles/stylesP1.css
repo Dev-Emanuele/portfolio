@@ -1,0 +1,193 @@
+
+div.project1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.project1, .myAlbums{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.proj1-title {
+    font-family: 'Concert One', cursive;
+    font-size: 40px;
+}
+
+form {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+div.input > input, div.submit > button {
+    height: 30px;
+    border-radius: 7px;
+    border: none;
+    text-align: center
+}
+
+div.input > input {
+    margin: 0px 5px 10px 5px
+}
+
+div.submit {
+    display: flex;
+    justify-content: center;
+}
+
+div.submit > button {
+    width: 140px;
+    bottom: 10px
+}
+
+div.howTo{
+    margin-top: 70px;
+    line-height: 1.5;
+    padding: 0 20px
+}
+
+div.info {
+    display: flex;
+    margin-top: 20px;
+}
+
+.album-page, .myAlbums-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+/* -- ARTIST PAGE -- */
+
+div.artist-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-left: 20px;
+}
+
+div.artist {
+    margin-top:30px;
+    font-size: 20px;
+    text-align: center;
+}
+
+div.artist > p {
+    margin-bottom: 50px;
+    font-size: 30px
+}
+
+div.artist-name > button {
+    height: 30px;
+    width: 90px;
+    border-radius: 7px;
+    border: none;    
+}
+
+/* -- ALBUM PAGE -- */
+
+
+.myAlbums-list:hover {
+    font-weight: bold;
+}
+
+div.album-name {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    align-items: center;
+}
+
+div.album-title {
+    text-align: center;
+    margin-top:20px
+}
+
+div.album-name > button {
+    margin-left: 20px;
+    border: none;
+    border-radius: 7px;
+    width: 100px;
+
+}
+
+div.album-name > button {
+    margin-top: 20px;
+    width: 100px;
+    height: 30px
+}
+
+div.album-info {
+    margin-top: 50px;
+    display: grid;
+    grid-template-rows: 1fr, 1fr;
+    grid-template-columns: auto auto;
+}
+    
+div.single-track { 
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 40px;
+    padding: 0px;
+    height: 30px;
+    line-height: 1;
+}
+
+div.single-track > form > input {
+    width: 50px;
+    margin-left: 20px
+}
+
+div.single.track > form > button {
+    margin-right: 20px;
+    width:40px ;
+}
+
+/* -- MY ALBUMS PAGE -- */
+
+.returnSearch {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+div.myAlbums {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px
+}
+
+div.myAlbums-info {
+    display: flex;
+    /*border: 1px dotted red;*/
+    width: 750px;
+    height: 300px;
+    margin-top: 20px
+}
+
+div.myAlbums-info > img {
+    width: 300px;
+    height: 300px;
+}
+
+div.myAlbums-info > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 20px;
+    
+}
+
+div.myAlbums-buttons > button {
+    width: 90px;
+    height: 30px;
+    border-radius: 7px;
+    border: 1px solid grey;
+    margin-right: 20px;
+}

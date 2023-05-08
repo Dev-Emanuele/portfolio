@@ -1,0 +1,166 @@
+import React, { useEffect, useState } from "react"
+import {Link} from "react-router-dom"
+import '../styles/stylesP1.css'
+import Artist from "./Artist"
+import Album from "./Album"
+import HowToP1 from "./HowToP1"
+import { fetchData } from "./data"
+
+function MainP1() {
+	const [formData, setFormData] = useState({artistName: "", albumName: ""})
+	const [searchArtist, setSearchArtist] = useState()
+	const [searchAlbum, setSearchAlbum] = useState()
+	const [artistData, setArtistData] = useState("")
+	const [albumData, setAlbumData] = useState("")
+	const [isLoading, setIsLoading] = useState(true)
+	
+
+	useEffect(()=>{
+		searchArtist&&
+		fetchData(searchArtist,searchAlbum)
+			.then(data => {
+				data.topalbums&&setArtistData(data)
+				data.album&&setAlbumData(data)
+				setIsLoading(false)
+				setFormData({artistName: "", albumName: ""})})
+			.catch(err => console.error(err))
+	},[searchArtist, searchAlbum])
+
+	function handleChange(event){
+		const {name, value} = event.target
+		setFormData(prevFormData => (
+			{...prevFormData,
+				[name]:value
+			}
+		))
+	}
+	
+	function handleSubmit(event){
+		console.log("click submit!")
+		event.preventDefault()
+		setIsLoading(true)
+		setSearchArtist(formData.artistName)
+		setSearchAlbum(formData.albumName)
+		setFormData({artistName: "", albumName: ""})
+	}
+
+	function viewAlbum(artist, album){
+		setIsLoading(true)
+		setSearchArtist(artist)
+		setSearchAlbum(album)
+		setFormData({artistName: "", albumName: ""})
+	}
+
+	return(
+		<div className="project1">
+			<h1 className="proj1-title">THE ALBUM RATER</h1>
+			<form onSubmit={handleSubmit}>
+				<div className="input">
+				<input 
+					type="text"
+					placeholder="*insert artist name"
+					onChange={handleChange}
+					name="artistName"
+					value={FormData.artistName}
+				/>
+				<input
+					type="text"
+					placeholder="insert album name"
+					onChange={handleChange}
+					name="albumName"
+					value={FormData.albumName}
+				/>
+				</div>
+				<div className="submit">
+					<button disabled={!formData.artistName}>Search</button>
+				</div>				
+			</form>
+			<p><Link to="./myalbums">YOUR ALBUM LIST</Link></p>
+
+			{searchAlbum&&!isLoading? 
+				<Album
+					key={albumData.album.id}
+					artist={albumData.album.artist}
+					name={albumData.album.name}
+					img={albumData.album.image[3]["#text"]}
+					tracks={albumData.album.tracks.track}
+				/>	
+			:!isLoading&&!artistData.error?
+				<Artist
+					key={artistData.topalbums.album}
+					artist={artistData.topalbums["@attr"].artist}
+					topalbums={artistData.topalbums.album}
+					datas={viewAlbum}
+				/>
+			:<HowToP1/>}
+		</div>
+	)
+}
+
+export {MainP1}
+
+
+
+
+
+
+/*
+
+
+http://ws.audioscrobbler.com/2.0/?method=
+		album.getinfo
+		&artist=coldplay
+		&album=parachutes		
+		&api_key=1d77ec8069b9fd474d76e7cd3dafc8d9
+		&format=json`
+
+		http://ws.audioscrobbler.com/2.0/?method=
+		artist.gettopalbums
+		&artist=coldplay
+		&api_key=1d77ec8069b9fd474d76e7cd3dafc8d9
+		&format=json`
+
+
+useEffect(()=>{
+		searchArtist&&
+		fetchData(searchArtist,searchAlbum)
+			.then(data => {
+				setApiData(data)
+				setIsLoading(false)
+				setFormData({artistName: "", albumName: ""})})
+			.catch(err => console.error(err))
+	},[searchArtist, searchAlbum])
+
+
+	useEffect(()=>{
+		searchArtist&&
+		fetchDataArtist(searchArtist)
+			.then(data => {
+				setArtistData(data)
+				setIsLoading(false)
+			})
+			.catch(err => console.error(err))
+
+		searchAlbum&&
+		fetchDataAlbum(searchArtist,searchAlbum)
+			.then(data => {
+				setAlbumData(data)
+				setIsLoading(false)
+			})
+			.catch(err => console.error(err))
+	},[searchArtist])
+
+
+
+
+
+
+
+
+*/
+
+//API key	1d77ec8069b9fd474d76e7cd3dafc8d9
+//Shared secret	840c409e738078cd2ca33012f51155ed
+
+//new key
+//232ee527b09eef251b7c77c41589726b
