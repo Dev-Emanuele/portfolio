@@ -99,66 +99,6 @@ function MainP1() {
 
 export {MainP1}
 
-
-
-
-
-
-/*
-
-
-http://ws.audioscrobbler.com/2.0/?method=
-		album.getinfo
-		&artist=coldplay
-		&album=parachutes		
-		&api_key=1d77ec8069b9fd474d76e7cd3dafc8d9
-		&format=json`
-
-		http://ws.audioscrobbler.com/2.0/?method=
-		artist.gettopalbums
-		&artist=coldplay
-		&api_key=1d77ec8069b9fd474d76e7cd3dafc8d9
-		&format=json`
-
-
-useEffect(()=>{
-		searchArtist&&
-		fetchData(searchArtist,searchAlbum)
-			.then(data => {
-				setApiData(data)
-				setIsLoading(false)
-				setFormData({artistName: "", albumName: ""})})
-			.catch(err => console.error(err))
-	},[searchArtist, searchAlbum])
-
-
-	useEffect(()=>{
-		searchArtist&&
-		fetchDataArtist(searchArtist)
-			.then(data => {
-				setArtistData(data)
-				setIsLoading(false)
-			})
-			.catch(err => console.error(err))
-
-		searchAlbum&&
-		fetchDataAlbum(searchArtist,searchAlbum)
-			.then(data => {
-				setAlbumData(data)
-				setIsLoading(false)
-			})
-			.catch(err => console.error(err))
-	},[searchArtist])
-
-
-
-
-
-
-
-
-*/
-
 //API key	1d77ec8069b9fd474d76e7cd3dafc8d9
 //Shared secret	840c409e738078cd2ca33012f51155ed
 
