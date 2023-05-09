@@ -1,4 +1,4 @@
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
+[[redirects]]
+  from = "/_headers"
+  to = "/headers"
+  status = 200
