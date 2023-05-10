@@ -12,9 +12,7 @@ function YourLinks() {
                     Your data is saved as long as you use the same browser.            
                 </p>
                 <p>here a video demostration of the extension:</p>
-                <iframe 
-                    width="728"     //original 560
-                    height="409.5"   //original 315
+                <iframe                
                     src="https://www.youtube.com/embed/M_1nBjiEals" 
                     title="YouTube video player" 
                     frameBorder="0" 
