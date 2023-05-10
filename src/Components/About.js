@@ -7,7 +7,7 @@ function About(){
       return (
     <div className="about-page">
         <div className="about-box">
-            <div onClick={() => window.open("https://github.com/Emanuele707?tab=repositories")}>
+            <div onClick={() => window.open("https://github.com/Dev-Emanuele?tab=repositories")}>
                 <h3>I'm Emanuele Spada, and this is my Front-End developer portfolio.</h3>
                 <div className="github-link">
                     <img src={gitIcon} alt="GitHub's icon"/>
