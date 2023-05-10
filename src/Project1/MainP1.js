@@ -55,20 +55,20 @@ function MainP1() {
 			<h1 className="proj1-title">THE ALBUM RATER</h1>
 			<form onSubmit={handleSubmit}>
 				<div className="input">
-				<input 
-					type="text"
-					placeholder="*insert artist name"
-					onChange={handleChange}
-					name="artistName"
-					value={FormData.artistName}
-				/>
-				<input
-					type="text"
-					placeholder="insert album name"
-					onChange={handleChange}
-					name="albumName"
-					value={FormData.albumName}
-				/>
+					<input 
+						type="text"
+						placeholder="*insert artist name"
+						onChange={handleChange}
+						name="artistName"
+						value={FormData.artistName}
+					/>
+					<input
+						type="text"
+						placeholder="insert album name"
+						onChange={handleChange}
+						name="albumName"
+						value={FormData.albumName}
+					/>
 				</div>
 				<div className="submit">
 					<button className="buttons-p1" disabled={!formData.artistName}>Search</button>
