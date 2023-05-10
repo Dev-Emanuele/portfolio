@@ -444,7 +444,7 @@ div.about-box > h3 {
 /* -- CONTACT PAGE--*/
 
 .contact-box {
-    padding-top: 9vh;
+    padding-top: 40px;
     font-size: 1.37rem;
     display: flex;
     flex-direction: column;
@@ -506,7 +506,7 @@ div.about-box > h3 {
     flex-direction: column;
     align-items: center; 
     padding: 15px;
-    padding-top: 60px;
+    padding-top: 30px;
 }
 
 .yourlinks-box > h1 {
@@ -523,10 +523,14 @@ div.about-box > h3 {
     font-weight: 300;
 }
 
-/* ---- MEDIA QUERY ---- */
-/* OPTIMIZED FOR: DESKTOP */
+.yourlinks-box > iframe {
+    width:628px;     
+    height:409.5px;
+}
 
-/* LAPTOPS */
+/* ---- MEDIA QUERY ---- */
+
+/* LAPTOPS ONLY */
 
 @media (min-width: 1000px) and (max-width: 1350px)  {
     div.main {
@@ -558,7 +562,7 @@ div.about-box > h3 {
     }
 }
 
-/* TABLETS */
+/* LAPTOPS AND TABLETS */
 
 @media (min-width:850px) and (max-width: 999px)  {
     div.main {
@@ -631,11 +635,9 @@ div.about-box > h3 {
     div.title > h1, div.title > p  {
         font-size: 1.43rem
     }
-
-
 }
 
-/* MOBILE */
+/* TABLETS AND MOBILE */
 
 @media (max-width: 750px)  {
     div.main {
@@ -649,7 +651,6 @@ div.about-box > h3 {
         "row2"
         "row2";
     }
-
 
     .row1, .row2 {
         flex-direction: column;
@@ -683,9 +684,48 @@ div.about-box > h3 {
     .project-div {
         width: 320px;
     }
+
+    .yourlinks-box > iframe {
+        width:528px;     
+        height:309.5px;
+    }
 }
 
-/* CUSTOM */
+/* MOBILE ONLY */
+
+@media (max-width: 580px) {
+    .menu-box {
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+        padding-left: 10px;
+        border-radius: 5px;
+        background-color: #27282c;
+        width: 320px;
+        height: 30px;
+        position: fixed;
+        top: 65px;
+        right: 10px;
+        border-right:1px solid #534FA5;
+        border-bottom: 1px solid #534FA5;
+    }
+
+    body {
+        padding-top: 50px;
+    }
+
+    .contact-box > iframe {
+        min-width: 300px;
+        height: 350px;
+    }
+
+    .yourlinks-box > iframe {
+        width:300px;     
+        height:209.5px;
+    }
+}
+
+/* CUSTOMS */
 
 @media (max-width: 1420px) {
     div.footer > p {
@@ -714,18 +754,6 @@ div.about-box > h3 {
 
     div.menu {
         display:none;
-    }
-}
-
-@media (max-width: 580px) {
-    .menu-box {
-        flex-direction: column;
-        top: 65px;
-        right: 10px;
-        width: 140px;
-        height: 80px;
-        align-items: start;
-        padding: 5px 0 5px 25px;
     }
 }
 
