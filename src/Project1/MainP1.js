@@ -36,7 +36,6 @@ function MainP1() {
 	}
 	
 	function handleSubmit(event){
-		console.log("click submit!")
 		event.preventDefault()
 		setIsLoading(true)
 		setSearchArtist(formData.artistName)
@@ -72,7 +71,7 @@ function MainP1() {
 				/>
 				</div>
 				<div className="submit">
-					<button disabled={!formData.artistName}>Search</button>
+					<button className="buttons-p1" disabled={!formData.artistName}>Search</button>
 				</div>				
 			</form>
 			<p><Link to="./myalbums">YOUR ALBUM LIST</Link></p>
@@ -98,9 +97,3 @@ function MainP1() {
 }
 
 export {MainP1}
-
-//API key	1d77ec8069b9fd474d76e7cd3dafc8d9
-//Shared secret	840c409e738078cd2ca33012f51155ed
-
-//new key
-//232ee527b09eef251b7c77c41589726b

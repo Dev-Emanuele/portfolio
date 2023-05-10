@@ -20,12 +20,12 @@ function Top(){
                 <p className="menu-text"><Link to="/contact">// CONTACT</Link></p>
             </div>:null}
             <div className="burger-menu" onClick={toggleMenu}>
-                <img src={menu}/>
+                <img src={menu} alt="menu icon"/>
                 <p>menu</p>
             </div>     
             <Link to="/">  
                 <div className="home">                
-                    <img src={house}/>
+                    <img src={house} alt="home icon"/>
                     <p>home</p>
                 </div>
             </Link>

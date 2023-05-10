@@ -10,9 +10,9 @@ function Artist(props){
                     <div className="artist-info" key={item.name}>
                         <img src={item.image[2]["#text"]} alt="album cover"/>
                         <div className="artist-name">
-                            <p>{index+1} - {item.name}</p>
-                            <p>Listeners: {item.playcount.toLocaleString("de-DE")}</p>
-                            <button onClick={()=>props.datas(props.artist,item.name)}>view album</button>
+                            <p className="info-elem">{index+1} - {item.name}</p>
+                            <p className="info-elem">Listeners: {item.playcount.toLocaleString("de-DE")}</p>
+                            <button onClick={()=>props.datas(props.artist,item.name)} className="info-elem buttons-p1">view album</button>
                         </div>
                     </div>
                 ))}

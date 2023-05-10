@@ -54,30 +54,30 @@ function MyAlbums(){
                         img={albumData.imgUrl}
                         tracks={albumData.tracks}
                     />
-                </>:<div className="myAlbums">
-                        {onlyUnique?
+                 </>:<>
+                         {onlyUnique?
                             onlyUnique.map(obj => (
                             <div className="myAlbums-info" key={obj.album}>
                                 <img src={obj.imgUrl} alt="album cover"/>
                                 <div>
-                                    <div>
+                                    <div className="info-elem">
                                         <p>artist</p>
                                         <h3>{obj.artist}</h3>
                                     </div>
-                                    <div>
+                                    <div className="info-elem">
                                         <p>album</p>
                                         <h3>{obj.album}</h3>
                                     </div>
-                                    <p>Rating: {getVotes(obj)} / 100</p>
-                                    <div className="myAlbums-buttons">
-                                    <button onClick={()=>viewAlbum(obj)}>rate album</button>
-                                    <button onClick={()=>removeAlbum(obj.album)}>remove</button>
+                                    <p className="info-elem">Rating: {getVotes(obj)} / 100</p>
+                                    <div className="myAlbums-buttons info-elem" >
+                                    <button className="buttons-p1" onClick={()=>viewAlbum(obj)}>rate album</button>
+                                    <button className="buttons-p1" onClick={()=>removeAlbum(obj.album)}>remove</button>
                                 </div>
                                 </div>
                             </div>
                         )):<p>no albums saved!</p>
                         }
-                    </div>
+                    </>
             } 
         </div>
     )

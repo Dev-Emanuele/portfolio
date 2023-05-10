@@ -8,7 +8,8 @@ function Album(props){
 
     //save button hidden if album is already saved    
     const isSaved = storage&&storage.map(obj=>(obj.album.includes(props.name)))
-    const saveButton = storage&&isSaved.includes(true)?null: <button onClick={()=>saveLocal()}>save album</button>
+    const saveButton = storage&&isSaved.includes(true)?null: 
+        <button className="buttons-p1" onClick={()=>saveLocal()}>save album</button>
     
     //vote form input
     function handleFormChange(event){
@@ -64,7 +65,7 @@ function Album(props){
                                 name={obj.name}
                                 value={formData.vote}
                             />
-                            <button>rate</button>
+                            <button className="buttons-p1">rate</button>
                         </form>
                         {obj.vote&&<p>rating: {obj.vote} / 100</p>}
                     </div>
@@ -76,10 +77,3 @@ function Album(props){
 }
 
 export default Album
-
-
-/*
-
-
-        const voted = tracksArr.some(obj => obj.hasOwnProperty("vote") && obj.vote !== "")
-    }*/

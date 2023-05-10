@@ -7,18 +7,23 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: url("../images/maximalfocusREV.jpg");
+    background-image: url("../images/portfolioBg.jpg");
     background-size:cover;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
+    background-color: #191E29;
 }
 
 .raterBg {       /* background project1 */
-    background-image: url("../images/volodymyr-hryshchenkoMOD.jpg");
-    background-size:cover;
+    background-image: url("../images/project1Bg.jpg");
+    background-position: center;
 }
 
 a, button {
     cursor: pointer;
+}
+
+input:focus, button:focus {
+    outline: none;
 }
 
 a {
@@ -59,7 +64,7 @@ div.menu {          /* ON SCREEN MENU */
     display: flex;
     align-items: center;
     height: 45vh;
-    min-width: 750px; 
+    width: 750px; 
     padding-right: 15px;
     justify-content: space-around;    
     /*border: 1px dotted rgb(55, 50, 50);*/
@@ -78,6 +83,10 @@ div.menu {          /* ON SCREEN MENU */
 
 .box:hover {
     background-color: #27282c;
+}
+
+.box:active > .box-bottom > p {
+    color: #FF0A6C;
 }
 
 .about,.contact,           /* BOXES ROW 1 */
@@ -114,20 +123,20 @@ div.menu {          /* ON SCREEN MENU */
 }
 
 .about-top {    
-    background-image: url(../images/walkatorSQUARE.jpg);
+    background-image: url(../images/aboutTop.jpg);
     background-position:center
 }
 
 .about:hover .about-top {
-    background-image: url(../images/mohammad-rahmaniSQUAREsmall.jpg);
+    background-image: url(../images/aboutHover.jpg);
 }
 
 .contact-top {
-    background-image: url(../images/anas-alshantiSQUAREsmall.png);
+    background-image: url(../images/contactTop.png);
 }
 
 .contact:hover .contact-top {
-    background-image: url(../images/ussama-azamMOD.jpg);
+    background-image: url(../images/contactHover.jpg);
     background-position:bottom
 }
 
@@ -166,15 +175,16 @@ div.menu {          /* ON SCREEN MENU */
 }
 
 .proj1-top {
-    background-image: url(../images/PROJ1-LOGOr.png);
+    background-image: url(../images/proj1-neon.png);
 }
 
 .proj1-top:hover {
     background-image: url(../images/proj1-top.png);
+    background-position: center;
 }
 
 .proj2-top {
-    background-image: url(../images/PROJ2-LOGOr.png);
+    background-image: url(../images/proj2-neon.png);
 }
 
 .proj2-top:hover {
@@ -185,7 +195,7 @@ div.menu {          /* ON SCREEN MENU */
 
 .title,.menu { 
     width: 45vw; 
-    padding-left: 15px;
+    padding-left: 30px;
     /*border: 1px dotted rgb(55, 50, 50)*/
 }
 
@@ -218,7 +228,7 @@ div.title > p {
     font-size: 2.19rem; /* 35px */
 }
 
-/* -- MENU -- */
+/* -- ON SCREEN MENU -- */
 
 div.menu {
     display: flex;
@@ -229,6 +239,7 @@ div.menu {
 
 div.menu > div {
     display: flex;
+    
 }
 
 div.menu > p {
@@ -245,6 +256,10 @@ div.menu > p:hover {
     text-shadow: 3px 2px 3px #01C38D;
 }
 
+.menu-text:active {
+    text-shadow: 3px 2px 10px #01C38D
+}
+
 /* -- TOP -- */
 
 div.top {
@@ -252,13 +267,13 @@ div.top {
     top:10px;
     right:10px;
     display: flex;
-    justify-content: right;
+    /*justify-content: center;*/
     align-items: center;
     border-right: 1px solid #FF0A6C;
     border-bottom: 1px solid #FF0A6C;
     width: 210px;
     height: 50px;
-    background-color: #27282c;
+    background-color: #191E29;
     color: #FFFFFF;
     border-radius: 5px;
 }
@@ -270,7 +285,22 @@ div.top > p {
 div.home, div.burger-menu {
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    border-radius: 5px;
+    padding-left: 11px; 
+}
+
+div.home:hover, div.burger-menu:hover {
+    background-color: #27282c 
+}
+
+div.home:active, div.burger-menu:active {
+    box-shadow: 0px 2px 1px #534FA5;
+}
+
+div.home {
+    height: 49px;
+    width: 105px
+      
 }
 
 div.home > img {
@@ -280,7 +310,9 @@ div.home > img {
 
 div.burger-menu {
     display: flex;
-    cursor: pointer
+    cursor: pointer;
+    height: 100%;
+    width: 100%
 }
 
 div.burger-menu > img {
@@ -318,8 +350,8 @@ div.footer {
     display: flex;
     align-items: center;
     color:white;
-    width: 100%;
-    height: 5vh;    
+    width: 170px;
+    height: 5vh;  
 }
 
 div.footer > p {
@@ -400,6 +432,7 @@ div.about-box > h3 {
     flex-direction: column;
     justify-content: center;   
     align-items: center;
+    margin-bottom: 60px;
 }
 
 .projects-img {
@@ -431,6 +464,10 @@ div.about-box > h3 {
 }
 
 .send-message:hover {
+    box-shadow: 1px 1px 3px rgb(251, 233, 30) ;
+}
+
+.send-message:active {
     width: 302px;
     height: 52px;
     background-color: rgb(1, 107, 1);
@@ -505,11 +542,10 @@ div.about-box > h3 {
         display: flex;
         align-items: center;
         height: 35vh;
-        /*border: 1px dotted rgb(55, 50, 50);*/
     }
 
     .box {          /* ALL BOXES */
-        height: 30vh; /* 30px */
+        height: 30vh; 
     }
 
     .title {
@@ -517,7 +553,7 @@ div.about-box > h3 {
     }
 
     div.menu { 
-        width: 25vw; 
+        width: 20vw; 
         justify-content:center;
     }
 }
@@ -532,26 +568,48 @@ div.about-box > h3 {
         "mainText mainText menu"
         "row1 row1 row1"
         "row2 row2 row2";
+        width: 100vw;
     }
 
     .title {
         width: 70vw;
     }
 
-    .menu {
-        padding-left: 45px;
-        padding-top: 24px;
+    div.menu {        
+        width: 27vw;
+        padding-left: 60px;
+        padding-top: 40px;
+    }
+
+    div.menu > p {
+        font-size: 1.125rem ; /* 18px */
+    }
+
+    div.menu > p:hover {
+        font-size: 1.5rem ; /* 24px */
     }
 
     .row1, .row2 {
-        width: 100vw;
+        width: 97vw;
+    }
+
+    .box {          
+        height: 30vh; 
+     }
+
+    .name-span {
+        font-size: 2.87rem; /* 46 -70px */
+    }   
+
+    div.title > h1, div.title > p  {
+        font-size: 1.43rem
     }
 }
 
-@media (min-width:750px) and (max-width: 850px)  {
+@media (min-width:750px) and (max-width: 849px)  {
     div.main {
         grid-template-rows: 1fr, 1fr, 1fr;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1;
         grid-template-areas: 
         "mainText mainText ..."
         "row1 row1 row1"
@@ -561,29 +619,43 @@ div.about-box > h3 {
     .row1, .row2 {
         width: 100vw;
     }
+
+    .box {          
+        height: 30vh; 
+     }
+
+    .name-span {
+        font-size: 2.87rem; /* 46 -70px */
+    }   
+
+    div.title > h1, div.title > p  {
+        font-size: 1.43rem
+    }
+
+
 }
 
 /* MOBILE */
 
 @media (max-width: 750px)  {
     div.main {
-        grid-template-rows: repeat(7, 1fr);
+        grid-template-rows: repeat(6, 1fr);
         grid-template-columns: repeat(1, 1fr);
         grid-template-areas: 
-        "mainText "
+        "mainText"
         "row1"
         "row1"
-        "row1"
-        "row2"
+        "row1" 
         "row2"
         "row2";
     }
 
+
     .row1, .row2 {
         flex-direction: column;
-        align-items: start;
+        align-items: center;
         justify-content:space-between;
-        margin-left: 20vw; 
+        width: 100vw;
     }
 
     .title {
@@ -593,15 +665,14 @@ div.about-box > h3 {
 
     .row1 {
         height: 1200px;
-        margin-top: 0
     }
     .row2  {
-        height: 850px;
-        padding: 40px 0;
+        height: 815px;
+        padding-top: 40px;        
     }
 
     .box { 
-        width: 320px
+        width: 320px;
     }
 
     .contact-box > iframe {
@@ -610,7 +681,7 @@ div.about-box > h3 {
     }
 
     .project-div {
-        width: 320px
+        width: 320px;
     }
 }
 
@@ -620,10 +691,9 @@ div.about-box > h3 {
     div.footer > p {
         position: fixed;
         transform: rotate(-90deg);
-        bottom:90px;
-        left: -85px;
-        margin-left: 28px;
-       
+        bottom:68px;
+        left: -66px;
+        /*margin-left: 31px;*/
     }
 }
 
@@ -640,6 +710,10 @@ div.about-box > h3 {
 @media (max-width: 850px)  {
     .title {
         width: 100vw;
+    }
+
+    div.menu {
+        display:none;
     }
 }
 

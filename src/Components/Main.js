@@ -33,15 +33,15 @@ function Main(){
                     </div>
                 </div>
                 </Link>
+                <Link to="/contact">  
                 <div className="contact box">
                     <div className="contact-top box-top">
                     </div>
-                    <Link to="/contact">  
                     <div className="box-bottom">
                         <div className="contactCall">CONTACT ME!</div>
                     </div>
-                    </Link>
                 </div>                    
+                </Link>
                 <div className="linkedin box" onClick={linkedin} >
                     <div className="linkedin-top box-top">
                     </div>
