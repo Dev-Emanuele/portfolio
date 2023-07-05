@@ -167,6 +167,7 @@ div.menu {          /* ON SCREEN MENU */
 .linkedin-top {    
     background-image: url(../images/linkedin-TRANS.jpeg);
     background-position:center
+    transition: background-image 0.3s ease-in-out;
 }
 
 .linkedin:hover .linkedin-top {
